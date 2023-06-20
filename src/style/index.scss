@@ -1,0 +1,98 @@
+@import './Animations.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--app-background);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:root {
+    --black: #101216;
+    --white: #fff;
+    --red: #f82f3d;
+    --green: #1fb675;
+    --blue: #3e97fd;
+    --orange: #fc9c1f;
+
+    --grey-e0: #e0e0e0;
+    --grey-eb: #ebebebeb;
+    --grey-e: #eeeeee;
+    --grey-1: #b2c4d1;
+    --grey-2: #4f585e;
+    --grey-3: #5c666d;
+
+    --black-1: #3a4f5a;
+    --black-2: #25323a;
+    --black-3: #1e2b33;
+    --black-4: #19212b;
+    --black-5: #131d27;
+
+    --success: var(--green);
+    --warning: var(--orange);
+    --error: var(--red);
+    --info: var(--blue);
+}
+
+// themes
+body.default-theme {
+    --app-main-side-bar: var(--grey-2);
+    --app-main-border: var(--grey-1);
+    --app-main-hover: var(--grey-3);
+    --app-icon: var(--grey-e);
+    --app-main-active-btn: var(--grey-1);
+    --app--header-background: var(--grey-eb);
+    --app-background: var(--grey-e0);
+}

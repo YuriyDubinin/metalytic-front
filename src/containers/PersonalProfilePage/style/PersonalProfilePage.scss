@@ -1,0 +1,84 @@
+.personal-profile-page {
+    width: 100%;
+    height: 100%;
+    padding-left: 85px;
+}
+
+.personal-profile-page__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+
+    :nth-child(1) {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        height: 55%;
+        width: 35%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in forwards;
+    }
+
+    :nth-child(2) {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        height: 30%;
+        width: 35%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in 0.1s forwards;
+    }
+
+    :nth-child(2) {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        height: 30%;
+        width: 35%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in 0.2s forwards;
+    }
+
+    :nth-child(3) {
+        position: absolute;
+        top: 5%;
+        left: 43%;
+        height: 25%;
+        width: 30%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in 0.4s forwards;
+    }
+
+    :nth-child(4) {
+        position: absolute;
+        bottom: 5%;
+        left: 43%;
+        height: 60%;
+        width: 30%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in 0.3s forwards;
+    }
+
+    // circle
+    :nth-child(5) {
+        z-index: 3;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        height: 35%;
+        width: 19%;
+        border-radius: 50%;
+        animation: neuro-light-appearance 0.3s ease-in 0.6s forwards;
+    }
+
+    :nth-child(6) {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        height: 50%;
+        width: 19%;
+        border-radius: 25px;
+        animation: neuro-light-appearance 0.3s ease-in 0.5s forwards;
+    }
+}

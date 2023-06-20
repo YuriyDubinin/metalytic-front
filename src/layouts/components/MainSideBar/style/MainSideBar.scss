@@ -1,0 +1,115 @@
+.main-side-bar-wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100px;
+    top: 150px;
+    left: -15px;
+    transition: all 0.3s ease;
+
+    &_close {
+        top: 150px;
+        left: -80px;
+        transform: scale(0.9);
+    }
+
+    &_hide {
+        top: 150px;
+        left: -80px;
+        transform: scale(0.9);
+    }
+}
+
+.main-side-bar {
+    width: 80px;
+    cursor: pointer;
+    background-color: var(--app-main-side-bar);
+    height: 100%;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-side-bar__main {
+}
+
+.main-side-bar__main-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        background-color: var(--app-main-hover);
+    }
+
+    &.active {
+        background-color: var(--app-main-hover);
+    }
+}
+
+.main-side-bar__additional {
+    border-top: 1px solid var(--app-main-border);
+}
+
+.main-side-bar__additional-item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        background-color: var(--app-main-hover);
+    }
+
+    &_active {
+        background-color: var(--app-main-hover);
+    }
+}
+
+.main-side-bar-descriptor {
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: var(--app-main-side-bar);
+    color: var(--app-icon);
+    position: absolute;
+    top: 20px;
+    right: -95px;
+}
+
+// Animations
+@keyframes main-side-bar-descriptor-appearance {
+    0% {
+    }
+
+    100% {
+    }
+}
