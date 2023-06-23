@@ -58,7 +58,7 @@ const MainSideBar = () => {
 
     useEffect(() => {
         if (mainSideBar.mode === 'DYNAMIC') {
-            console.log('mode: DYNAMIC');
+            // console.log('mode: DYNAMIC');
         }
     }, [mainSideBar.show, mainSideBar.mode]);
 
