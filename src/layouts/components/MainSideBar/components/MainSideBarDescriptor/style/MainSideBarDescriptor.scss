@@ -1,0 +1,28 @@
+.main-side-bar-descriptor {
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    background-color: var(--app-main-side-bar);
+    color: var(--app-icon);
+    position: absolute;
+    top: 12px;
+    left: 70px;
+    z-index: 2;
+
+    opacity: 0;
+    animation: main-side-bar-descriptor-appearance 0.3s ease forwards;
+}
+
+// Animations
+@keyframes main-side-bar-descriptor-appearance {
+    0% {
+        opacity: 0;
+        left: 90px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 70px;
+    }
+}

@@ -4,18 +4,18 @@
     justify-content: flex-end;
     position: absolute;
     width: 100px;
-    top: 150px;
+    top: 12%;
     left: -15px;
     transition: all 0.3s ease;
 
     &_close {
-        top: 150px;
+        top: 12%;
         left: -80px;
         transform: scale(0.9);
     }
 
     &_hide {
-        top: 150px;
+        top: 12%;
         left: -80px;
         transform: scale(0.9);
     }
@@ -35,6 +35,9 @@
 }
 
 .main-side-bar__main {
+    li {
+        position: relative;
+    }
 }
 
 .main-side-bar__main-item {
@@ -65,6 +68,9 @@
 
 .main-side-bar__additional {
     border-top: 1px solid var(--app-main-border);
+    li {
+        position: relative;
+    }
 }
 
 .main-side-bar__additional-item {
@@ -90,26 +96,5 @@
 
     &_active {
         background-color: var(--app-main-hover);
-    }
-}
-
-.main-side-bar-descriptor {
-    padding: 5px;
-    border-radius: 6px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    background-color: var(--app-main-side-bar);
-    color: var(--app-icon);
-    position: absolute;
-    top: 20px;
-    right: -95px;
-}
-
-// Animations
-@keyframes main-side-bar-descriptor-appearance {
-    0% {
-    }
-
-    100% {
     }
 }

@@ -20,29 +20,26 @@ import NoticeIcon from './assets/notice.svg?jsx';
 
 import Modal from '../../../components/Modal/Modal';
 import Notifications from '../../../components/Notifications/Notifications';
+import MainSideBarDescriptor from './components/MainSideBarDescriptor/MainSideBarDescriptor';
 
 import {selectMainSideBar, setMainSideBar} from '../../../slice/mainSlice';
 
 const MainSideBar = () => {
     const [isModal, setModal] = useState(false);
     const [showDescription, setShowDescription] = useState(false);
-    const [descriptorSettings, setDesriptorSettings] = useState({});
+    const [itemLabel, setItemLabel] = useState('');
 
     const mainSideBar = useSelector(selectMainSideBar);
 
     const dispatch = useDispatch();
 
-    const onMouseMove = () => {
-        setShowDescription(true);
-
+    const onMouseMoveSideBar = () => {
         if (!mainSideBar.show) {
             return dispatch(setMainSideBar({...mainSideBar, show: true}));
         }
     };
 
-    const onMouseOut = () => {
-        setShowDescription(false);
-
+    const onMouseOutSideBar = () => {
         if (mainSideBar.mode === 'DYNAMIC') {
             setTimeout(() => {
                 return dispatch(setMainSideBar({...mainSideBar, show: false}));
@@ -55,6 +52,16 @@ const MainSideBar = () => {
             ? dispatch(setMainSideBar({...mainSideBar, mode: 'DYNAMIC'}))
             : dispatch(setMainSideBar({...mainSideBar, mode: 'STATIC'}));
     };
+
+    const onMouseMoveItem = (label) => {
+        setShowDescription(true);
+        setItemLabel(label);
+    }
+
+    const onMouseOutItem = () => {
+        setShowDescription(false)
+        setItemLabel('');
+    }
 
     useEffect(() => {
         if (mainSideBar.mode === 'DYNAMIC') {
@@ -69,12 +76,15 @@ const MainSideBar = () => {
                 'main-side-bar-wrap_hide': !mainSideBar.show,
                 // 'main-side-bar-wrap_close': !mainSideBar.open && mainSideBar.mode === 'DYNAMIC',
             })}
-            onMouseMove={(e) => onMouseMove(e)}
-            onMouseOut={(e) => onMouseOut(e)}
+            onMouseMove={(e) => onMouseMoveSideBar(e)}
+            onMouseOut={(e) => onMouseOutSideBar(e)}
         >
             <div className="main-side-bar">
                 <ul className="main-side-bar__main">
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('ГЛАВНАЯ')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/'}
                             className="main-side-bar__main-item"
@@ -82,8 +92,14 @@ const MainSideBar = () => {
                         >
                             <WorldIcon />
                         </NavLink>
+                        {itemLabel === 'ГЛАВНАЯ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{itemLabel}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('ПРОФИЛЬ')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/profile'}
                             className="main-side-bar__main-item"
@@ -91,8 +107,14 @@ const MainSideBar = () => {
                         >
                             <ProfileIcon />
                         </NavLink>
+                        {itemLabel === 'ПРОФИЛЬ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'ПРОФИЛЬ'}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('СПОРТ')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/sport'}
                             className="main-side-bar__main-item"
@@ -100,8 +122,14 @@ const MainSideBar = () => {
                         >
                             <SportIcon />
                         </NavLink>
+                        {itemLabel === 'СПОРТ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'СПОРТ'}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('КОМАНДА')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/team'}
                             className="main-side-bar__main-item"
@@ -109,8 +137,14 @@ const MainSideBar = () => {
                         >
                             <TeamIcon />
                         </NavLink>
+                        {itemLabel === 'КОМАНДА' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'КОМАНДА'}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('ВИДЖЕТЫ')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/widgets'}
                             className="main-side-bar__main-item"
@@ -118,8 +152,14 @@ const MainSideBar = () => {
                         >
                             <WidgetsIcon />
                         </NavLink>
+                        {itemLabel === 'ВИДЖЕТЫ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'ВИДЖЕТЫ'}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('ПАРТНЁРЫ')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/partners'}
                             className="main-side-bar__main-item"
@@ -127,8 +167,14 @@ const MainSideBar = () => {
                         >
                             <PartnersIcon />
                         </NavLink>
+                        {itemLabel === 'ПАРТНЁРЫ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'ПАРТНЁРЫ'}</MainSideBarDescriptor>
+                        )}
                     </li>
-                    <li>
+                    <li
+                        onMouseMove={() => onMouseMoveItem('ПОДДЕРЖКА')}
+                        onMouseOut={() => onMouseOutItem()}
+                    >
                         <NavLink
                             to={'/support'}
                             className="main-side-bar__main-item"
@@ -136,36 +182,54 @@ const MainSideBar = () => {
                         >
                             <SupportIcon />
                         </NavLink>
+                        {itemLabel === 'ПОДДЕРЖКА' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'ПОДДЕРЖКА'}</MainSideBarDescriptor>
+                        )}
                     </li>
                 </ul>
-                <div className="main-side-bar__additional">
-                    <div
+                <ul className="main-side-bar__additional">
+                    <li
                         className={classNames({
                             'main-side-bar__additional-item': true,
                             'main-side-bar__additional-item_active': false,
                         })}
                         onClick={() => setModal(true)}
+                        onMouseMove={() => onMouseMoveItem('УВЕДОМЛЕНИЯ')}
+                        onMouseOut={() => onMouseOutItem()}
                     >
                         <NoticeIcon />
-                    </div>
-                    <div
+                        {itemLabel === 'УВЕДОМЛЕНИЯ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'УВЕДОМЛЕНИЯ'}</MainSideBarDescriptor>
+                        )}
+                    </li>
+                    <li
                         className={classNames({
                             'main-side-bar__additional-item': true,
                             'main-side-bar__additional-item_active': mainSideBar.mode === 'DYNAMIC',
                         })}
                         onClick={() => onChangeMode()}
+                        onMouseMove={() => onMouseMoveItem('РЕЖИМ')}
+                        onMouseOut={() => onMouseOutItem()}
                     >
                         <ModeIcon />
-                    </div>
-                    <div
+                        {itemLabel === 'РЕЖИМ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'РЕЖИМ'}</MainSideBarDescriptor>
+                        )}
+                    </li>
+                    <li
                         className="main-side-bar__additional-item"
                         onClick={() =>
                             dispatch(setMainSideBar({show: false, mode: mainSideBar.mode}))
                         }
+                        onMouseMove={() => onMouseMoveItem('СКРЫТЬ')}
+                        onMouseOut={() => onMouseOutItem()}
                     >
                         <HideIcon />
-                    </div>
-                </div>
+                        {itemLabel === 'СКРЫТЬ' && (
+                            <MainSideBarDescriptor showDescription={showDescription}>{'СКРЫТЬ'}</MainSideBarDescriptor>
+                        )}
+                    </li>
+                </ul>
             </div>
             <Modal
                 isVisible={isModal}

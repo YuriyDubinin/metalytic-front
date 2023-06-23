@@ -17,7 +17,7 @@
         height: 30%;
         width: 15%;
         border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease-in forwards;
+        animation: neuro-light-appearance 0.3s ease forwards;
     }
 
     :nth-child(2) {
@@ -27,7 +27,7 @@
         height: 55%;
         width: 35%;
         border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease-in 0.2s forwards;
+        animation: neuro-light-appearance 0.3s ease 0.2s forwards;
     }
 
     :nth-child(3) {
@@ -37,7 +37,7 @@
         height: 30%;
         width: 50%;
         border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease-in 0.5s forwards;
+        animation: neuro-light-appearance 0.3s ease 0.5s forwards;
     }
 
     :nth-child(4) {
@@ -47,7 +47,7 @@
         height: 55%;
         width: 30%;
         border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease-in 0.3s forwards;
+        animation: neuro-light-appearance 0.3s ease 0.3s forwards;
     }
 
     :nth-child(5) {
@@ -57,6 +57,6 @@
         height: 90%;
         width: 19%;
         border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease-in 0.4s forwards;
+        animation: neuro-light-appearance 0.3s ease 0.4s forwards;
     }
 }
