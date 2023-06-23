@@ -1,5 +1,6 @@
 export function get(name) {
     let matches = document.cookie.match(
+        //eslint-disable-next-line
         new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'),
     );
 

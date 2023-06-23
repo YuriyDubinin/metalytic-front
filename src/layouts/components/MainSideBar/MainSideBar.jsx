@@ -56,12 +56,12 @@ const MainSideBar = () => {
     const onMouseMoveItem = (label) => {
         setShowDescription(true);
         setItemLabel(label);
-    }
+    };
 
     const onMouseOutItem = () => {
-        setShowDescription(false)
+        setShowDescription(false);
         setItemLabel('');
-    }
+    };
 
     useEffect(() => {
         if (mainSideBar.mode === 'DYNAMIC') {
@@ -93,7 +93,9 @@ const MainSideBar = () => {
                             <WorldIcon />
                         </NavLink>
                         {itemLabel === 'ГЛАВНАЯ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{itemLabel}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {itemLabel}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -108,7 +110,9 @@ const MainSideBar = () => {
                             <ProfileIcon />
                         </NavLink>
                         {itemLabel === 'ПРОФИЛЬ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'ПРОФИЛЬ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'ПРОФИЛЬ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -123,7 +127,9 @@ const MainSideBar = () => {
                             <SportIcon />
                         </NavLink>
                         {itemLabel === 'СПОРТ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'СПОРТ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'СПОРТ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -138,7 +144,9 @@ const MainSideBar = () => {
                             <TeamIcon />
                         </NavLink>
                         {itemLabel === 'КОМАНДА' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'КОМАНДА'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'КОМАНДА'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -153,7 +161,9 @@ const MainSideBar = () => {
                             <WidgetsIcon />
                         </NavLink>
                         {itemLabel === 'ВИДЖЕТЫ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'ВИДЖЕТЫ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'ВИДЖЕТЫ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -168,7 +178,9 @@ const MainSideBar = () => {
                             <PartnersIcon />
                         </NavLink>
                         {itemLabel === 'ПАРТНЁРЫ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'ПАРТНЁРЫ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'ПАРТНЁРЫ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -183,7 +195,9 @@ const MainSideBar = () => {
                             <SupportIcon />
                         </NavLink>
                         {itemLabel === 'ПОДДЕРЖКА' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'ПОДДЕРЖКА'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'ПОДДЕРЖКА'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                 </ul>
@@ -199,7 +213,9 @@ const MainSideBar = () => {
                     >
                         <NoticeIcon />
                         {itemLabel === 'УВЕДОМЛЕНИЯ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'УВЕДОМЛЕНИЯ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'УВЕДОМЛЕНИЯ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -213,7 +229,9 @@ const MainSideBar = () => {
                     >
                         <ModeIcon />
                         {itemLabel === 'РЕЖИМ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'РЕЖИМ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'РЕЖИМ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                     <li
@@ -226,7 +244,9 @@ const MainSideBar = () => {
                     >
                         <HideIcon />
                         {itemLabel === 'СКРЫТЬ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>{'СКРЫТЬ'}</MainSideBarDescriptor>
+                            <MainSideBarDescriptor showDescription={showDescription}>
+                                {'СКРЫТЬ'}
+                            </MainSideBarDescriptor>
                         )}
                     </li>
                 </ul>

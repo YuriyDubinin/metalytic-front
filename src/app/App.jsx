@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -16,8 +16,6 @@ import {setCustomSettings} from '../slice/mainSlice';
 
 const App = () => {
     const dispatch = useDispatch();
-
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // from localStorage

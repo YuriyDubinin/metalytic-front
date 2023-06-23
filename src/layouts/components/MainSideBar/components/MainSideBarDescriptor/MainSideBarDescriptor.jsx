@@ -7,11 +7,7 @@ const MainSideBarDescriptor = ({showDescription, children}) => {
         return null;
     }
 
-    return (
-        <span className="main-side-bar-descriptor">
-            {children}
-        </span>
-    )
-}
+    return <span className="main-side-bar-descriptor">{children}</span>;
+};
 
 export default MainSideBarDescriptor;
