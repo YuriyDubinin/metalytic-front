@@ -7,6 +7,7 @@ import './style/Header.scss';
 import LoginIcon from './assets/business-person.svg?jsx';
 
 import Modal from '../../../components/Modal/Modal';
+import Login from '../../../containers/Login/Login';
 
 const Header = () => {
     const [isModal, setModal] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
                 <li></li>
                 <li></li>
             </ul>
-            <Modal isVisible={isModal} content={<>Login</>} onClose={() => setModal(false)} />
+            <Modal isVisible={isModal} content={<Login />} onClose={() => setModal(false)} />
         </div>
     );
 };

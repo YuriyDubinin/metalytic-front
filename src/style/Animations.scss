@@ -95,3 +95,17 @@
         transform: scale3d(1, 1, 1);
     }
 }
+
+@keyframes default-form-child-appearance {
+    0% {
+        opacity: 0;
+        left: 0;
+        bottom: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+        bottom: 0;
+    }
+}
