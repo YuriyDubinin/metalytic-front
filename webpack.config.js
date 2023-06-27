@@ -15,6 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: production ? '[name].[contenthash].js' : '[name].js',
         clean: true,
+        publicPath: '/',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -74,6 +75,7 @@ module.exports = {
     devServer: {
         port: 3000,
         hot: true,
+        historyApiFallback: true,
     },
     mode: production ? 'production' : 'development',
 };
