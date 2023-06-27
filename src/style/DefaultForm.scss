@@ -7,9 +7,12 @@
     flex-direction: column;
 }
 
+.default-form__input-wrapper {
+    position: relative;
+}
+
 .default-form__input {
     display: block;
-    position: relative;
     width: 100%;
     height: 2.5rem;
     margin-bottom: 15px;
@@ -34,9 +37,12 @@
 
 .default-form__error-message {
     font-size: 10px;
+    color: var(--error);
+    opacity: 0;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 3px;
+    animation: error-message-appearance 0.3s ease 0.1s forwards;
 }
 
 .default-form__submit-btn {
@@ -52,5 +58,19 @@
 
     &:hover {
         background-color: var(--app-input-btn-hover);
+    }
+}
+
+@keyframes error-message-appearance {
+    0% {
+        opacity: 0;
+        top: 15px;
+        right: 3px;
+    }
+
+    100% {
+        opacity: 1;
+        top: 3px;
+        right: 3px;
     }
 }
