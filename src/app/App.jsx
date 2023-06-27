@@ -2,6 +2,7 @@ import React from 'react';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Toaster} from 'react-hot-toast';
 
 import Layout from '../layouts/Layout';
 import MainPage from '../containers/MainPage/MainPage';
@@ -44,6 +45,7 @@ const App = () => {
                     <Route path="*" element={<>404</>} />
                 </Routes>
             </Layout>
+            <Toaster />
         </BrowserRouter>
     );
 };

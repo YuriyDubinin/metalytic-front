@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 import './style/RegistrationForm.scss';
 
+import InfoIcon from './assets/info.svg?jsx';
 import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
 
@@ -31,6 +33,14 @@ const RegistrationForm = ({onChangeMode}) => {
         },
     });
 
+    const fieldDescription = {
+        fullName: 'Фамилия Имя Отчество (через пробел)',
+        phone: 'Номер телефона, начиная с символа "+"',
+        email: 'Емейл должен быть написан в стандартном формате и содержать в себе символ "@"',
+        password:
+            'Пароль должен содержать минимум 6 символов, одну заглавную букву, одну прописную букву, одну цифру, один специальный символ (только английский язык)',
+    };
+
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
     };
@@ -47,6 +57,16 @@ const RegistrationForm = ({onChangeMode}) => {
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <div className="default-form__input-wrapper registration-form__full-name">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.fullName, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             className="default-form__input"
                             placeholder="Полное имя"
@@ -61,6 +81,16 @@ const RegistrationForm = ({onChangeMode}) => {
                         )}
                     </div>
                     <div className="default-form__input-wrapper registration-form__phone">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.phone, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             className="default-form__input"
                             placeholder="Телефон"
@@ -75,6 +105,16 @@ const RegistrationForm = ({onChangeMode}) => {
                         )}
                     </div>
                     <div className="default-form__input-wrapper registration-form__email">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.email, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             className="default-form__input"
                             placeholder="Почта"
@@ -89,6 +129,16 @@ const RegistrationForm = ({onChangeMode}) => {
                         )}
                     </div>
                     <div className="default-form__input-wrapper registration-form__password">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.password, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             type={passwordType}
                             className="default-form__input"
@@ -103,10 +153,14 @@ const RegistrationForm = ({onChangeMode}) => {
                             </span>
                         )}
                         {passwordType === 'password' && (
-                            <ClosedEyeIcon onClick={() => setPasswordType('text')} />
+                            <div className="registration-form__eye-icon">
+                                <ClosedEyeIcon onClick={() => setPasswordType('text')} />
+                            </div>
                         )}
                         {passwordType === 'text' && (
-                            <OpenEyeIcon onClick={() => setPasswordType('password')} />
+                            <div className="registration-form__eye-icon">
+                                <OpenEyeIcon onClick={() => setPasswordType('password')} />
+                            </div>
                         )}
                     </div>
                     <div className="default-form__input-wrapper registration-form__agree-with-rules">

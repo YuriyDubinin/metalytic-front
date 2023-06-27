@@ -35,6 +35,32 @@
     justify-content: center;
 }
 
+.sign-in-form__info-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 2px;
+    left: -33px;
+
+    svg {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.sign-in-form__eye-icon {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+
+    svg {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .sign-in-form__email {
     opacity: 0;
     position: relative;
@@ -45,15 +71,6 @@
     opacity: 0;
     position: relative;
     animation: default-form-child-appearance 0.3s ease 0.1s forwards;
-
-    svg {
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 10px;
-        right: 5px;
-    }
 }
 
 .sign-in-form__remember-me {

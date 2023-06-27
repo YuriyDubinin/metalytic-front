@@ -1,7 +1,10 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 import './style/PasswordRecoveryForm.scss';
+
+import InfoIcon from './assets/info.svg?jsx';
 
 import {validateEmail} from '../../../../helpers/Validation';
 
@@ -16,6 +19,10 @@ const PasswordRecoveryForm = ({onChangeMode}) => {
             email: '',
         },
     });
+
+    const fieldDescription = {
+        email: 'Емейл должен быть написан в стандартном формате и содержать в себе символ "@"',
+    };
 
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
@@ -33,6 +40,16 @@ const PasswordRecoveryForm = ({onChangeMode}) => {
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <div className="default-form__input-wrapper password-recovery-form__email">
+                        <div
+                            className="password-recovery-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.email, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             className="default-form__input"
                             placeholder="Почта"

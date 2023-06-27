@@ -19,7 +19,7 @@ export function validateEmail(value, isRequired = false) {
     return true;
 }
 
-// password validation (minimum 6 characters, must contain: one uppercase letter, one uppercase letter, one number, one special character)
+// password validation (minimum 6 characters, must contain: one uppercase letter, one lowercase letter, one number, one special character)
 export function validatePassword(value, isRequired = false) {
     const isFilled = value.trim() !== '' ? true : false;
     const regExp = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;

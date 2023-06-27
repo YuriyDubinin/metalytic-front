@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 import './style/SignInForm.scss';
 
+import InfoIcon from './assets/info.svg?jsx';
 import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
 
@@ -24,6 +26,12 @@ const SignInForm = ({onChangeMode}) => {
         },
     });
 
+    const fieldDescription = {
+        email: 'Емейл должен быть написан в стандартном формате и содержать в себе символ "@"',
+        password:
+            'Пароль должен содержать минимум 6 символов, одну заглавную букву, одну прописную букву, одну цифру, один специальный символ (только английский язык)',
+    };
+
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
     };
@@ -37,6 +45,16 @@ const SignInForm = ({onChangeMode}) => {
                 </div>
                 <form className="sign-in-from__body default-form" onSubmit={handleSubmit(onSubmit)}>
                     <div className="default-form__input-wrapper sign-in-form__email">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.email, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             className="default-form__input"
                             placeholder="Почта"
@@ -51,6 +69,16 @@ const SignInForm = ({onChangeMode}) => {
                         )}
                     </div>
                     <div className="default-form__input-wrapper sign-in-form__password">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.password, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
                         <input
                             type={passwordType}
                             className="default-form__input"
@@ -65,10 +93,14 @@ const SignInForm = ({onChangeMode}) => {
                             </span>
                         )}
                         {passwordType === 'password' && (
-                            <ClosedEyeIcon onClick={() => setPasswordType('text')} />
+                            <div className="sign-in-form__eye-icon">
+                                <ClosedEyeIcon onClick={() => setPasswordType('text')} />
+                            </div>
                         )}
                         {passwordType === 'text' && (
-                            <OpenEyeIcon onClick={() => setPasswordType('password')} />
+                            <div className="sign-in-form__eye-icon">
+                                <OpenEyeIcon onClick={() => setPasswordType('password')} />
+                            </div>
                         )}
                     </div>
                     <div className="default-form__input-wrapper sign-in-form__remember-me">

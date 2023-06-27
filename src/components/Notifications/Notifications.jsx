@@ -1,6 +1,5 @@
 import React from 'react';
-
-import toast, {Toaster} from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 import './style/Notifications.scss';
 
@@ -22,7 +21,6 @@ const Notifications = () => {
             >
                 <NoticeBell />
             </div>
-            <Toaster />
         </div>
     );
 };
