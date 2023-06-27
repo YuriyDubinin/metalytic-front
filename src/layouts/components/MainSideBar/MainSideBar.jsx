@@ -1,6 +1,4 @@
-import React from 'react';
-
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import classNames from 'classnames';
@@ -74,7 +72,6 @@ const MainSideBar = () => {
             className={classNames({
                 'main-side-bar-wrap': true,
                 'main-side-bar-wrap_hide': !mainSideBar.show,
-                // 'main-side-bar-wrap_close': !mainSideBar.open && mainSideBar.mode === 'DYNAMIC',
             })}
             onMouseMove={(e) => onMouseMoveSideBar(e)}
             onMouseOut={(e) => onMouseOutSideBar(e)}

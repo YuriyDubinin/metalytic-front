@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -9,9 +10,12 @@ import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
 
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
+import {setIsAuth} from '../../../../slice/mainSlice';
 
-const SignInForm = ({onChangeMode}) => {
+const SignInForm = ({onChangeMode, onCloseModal}) => {
     const [passwordType, setPasswordType] = useState('password');
+
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -34,6 +38,12 @@ const SignInForm = ({onChangeMode}) => {
 
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
+
+        // fake admin
+        if (data.email === 'admin@ololo.com') {
+            dispatch(setIsAuth(true));
+            onCloseModal();
+        }
     };
 
     return (
