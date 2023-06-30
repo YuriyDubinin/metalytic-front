@@ -12,6 +12,8 @@ import OpenEyeIcon from './assets/eye-open.svg?jsx';
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
 import {setIsAuth} from '../../../../slices/mainSlice';
 
+import {login} from './actions/signInApi';
+
 const SignInForm = ({onChangeMode, onCloseModal}) => {
     const [passwordType, setPasswordType] = useState('password');
 
@@ -39,11 +41,22 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
 
+        login()
+            .then((res) => {
+                localStorage.setItem('authorizationToken', res?.accessToken);
+                dispatch(setIsAuth(true));
+                onCloseModal();
+            })
+            .catch((err) => {
+                console.log('error: ', err);
+            })
+            .finally(() => {});
+
         // fake admin
-        if (data.email === 'admin@ololo.com') {
-            dispatch(setIsAuth(true));
-            onCloseModal();
-        }
+        // if (data.email === 'admin@ololo.com') {
+        //     dispatch(setIsAuth(true));
+        //     onCloseModal();
+        // }
     };
 
     return (
