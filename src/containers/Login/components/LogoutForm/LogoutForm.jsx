@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 
 import './style/LogoutForm.scss';
 
-import {setIsAuth} from '../../../../slice/mainSlice';
+import {setIsAuth} from '../../../../slices/mainSlice';
 
 const LogoutForm = ({onCloseModal}) => {
     const dispatch = useDispatch();

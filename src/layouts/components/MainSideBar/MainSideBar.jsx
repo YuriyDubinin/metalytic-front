@@ -20,7 +20,7 @@ import Modal from '../../../components/Modal/Modal';
 import Notifications from '../../../components/Notifications/Notifications';
 import MainSideBarDescriptor from './components/MainSideBarDescriptor/MainSideBarDescriptor';
 
-import {selectMainSideBar, setMainSideBar} from '../../../slice/mainSlice';
+import {selectMainSideBar, setMainSideBar} from '../../../slices/mainSlice';
 
 const MainSideBar = () => {
     const [isModal, setModal] = useState(false);

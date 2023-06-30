@@ -10,7 +10,7 @@ import CircleDisableIcon from './assets/circledisable.svg?jsx';
 import Modal from '../../../components/Modal/Modal';
 import Login from '../../../containers/Login/Login';
 
-import {selectIsAuth} from '../../../slice/mainSlice';
+import {selectIsAuth} from '../../../slices/mainSlice';
 
 const Header = () => {
     const [loginModal, setLoginModal] = useState(false);

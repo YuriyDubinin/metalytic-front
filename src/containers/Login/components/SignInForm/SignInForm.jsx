@@ -10,7 +10,7 @@ import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
 
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
-import {setIsAuth} from '../../../../slice/mainSlice';
+import {setIsAuth} from '../../../../slices/mainSlice';
 
 const SignInForm = ({onChangeMode, onCloseModal}) => {
     const [passwordType, setPasswordType] = useState('password');

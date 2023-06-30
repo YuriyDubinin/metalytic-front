@@ -8,7 +8,7 @@ import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import PasswordRecoveryForm from './components/PasswordRecoveryForm/PasswordRecoveryForm';
 import LogoutForm from './components/LogoutForm/LogoutForm';
 
-import {selectIsAuth} from '../../slice/mainSlice';
+import {selectIsAuth} from '../../slices/mainSlice';
 
 const Login = ({onCloseModal}) => {
     const isAuth = useSelector(selectIsAuth);
