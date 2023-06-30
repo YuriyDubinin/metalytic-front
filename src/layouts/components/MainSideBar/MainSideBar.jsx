@@ -215,7 +215,7 @@ const MainSideBar = () => {
                             </MainSideBarDescriptor>
                         )}
                     </li>
-                    <li
+                    {/* <li
                         className={classNames({
                             'main-side-bar__additional-item': true,
                             'main-side-bar__additional-item_active': mainSideBar.mode === 'DYNAMIC',
@@ -230,7 +230,7 @@ const MainSideBar = () => {
                                 {'РЕЖИМ'}
                             </MainSideBarDescriptor>
                         )}
-                    </li>
+                    </li> */}
                     <li
                         className="main-side-bar__additional-item"
                         onClick={() =>

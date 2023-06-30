@@ -4,18 +4,18 @@
     justify-content: flex-end;
     position: absolute;
     width: 100px;
-    top: 12%;
+    top: 16%;
     left: -15px;
     transition: all 0.3s ease;
 
     &_close {
-        top: 12%;
+        top: 16%;
         left: -80px;
         transform: scale(0.9);
     }
 
     &_hide {
-        top: 12%;
+        top: 16%;
         left: -80px;
         transform: scale(0.9);
     }
@@ -68,6 +68,7 @@
 
 .main-side-bar__additional {
     border-top: 1px solid var(--app-main-border);
+    
     li {
         position: relative;
     }
