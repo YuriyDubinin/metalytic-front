@@ -15,6 +15,8 @@ import {
     validatePassword,
 } from '../../../../helpers/Validation';
 
+import {registerOnSelf} from './actions/registrationForm';
+
 const RegistrationForm = ({onChangeMode}) => {
     const [passwordType, setPasswordType] = useState('password');
 
@@ -42,7 +44,14 @@ const RegistrationForm = ({onChangeMode}) => {
     };
 
     const onSubmit = (data) => {
-        console.log('submitted data: ', JSON.stringify(data));
+        registerOnSelf(JSON.stringify(data))
+            .then((res) => {
+                console.log('res: ', res);
+            })
+            .catch((err) => {
+                console.log('error: ', err);
+            })
+            .finally(() => {});
     };
 
     return (

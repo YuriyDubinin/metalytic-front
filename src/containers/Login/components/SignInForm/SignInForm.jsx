@@ -39,11 +39,11 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     };
 
     const onSubmit = (data) => {
-        console.log('submitted data: ', JSON.stringify(data));
+        // console.log('submitted data: ', JSON.stringify(data));
 
-        login(data)
+        login(JSON.stringify(data))
             .then((res) => {
-                localStorage.setItem('authorizationToken', res?.accessToken);
+                localStorage.setItem('authorization', res?.accessToken);
                 dispatch(setIsAuth(true));
                 onCloseModal();
             })

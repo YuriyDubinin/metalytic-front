@@ -8,6 +8,8 @@ import InfoIcon from './assets/info.svg?jsx';
 
 import {validateEmail} from '../../../../helpers/Validation';
 
+import {passwordRecovery} from './actions/passwordRecoveryForm';
+
 const PasswordRecoveryForm = ({onChangeMode}) => {
     const {
         register,
@@ -25,7 +27,14 @@ const PasswordRecoveryForm = ({onChangeMode}) => {
     };
 
     const onSubmit = (data) => {
-        console.log('submitted data: ', JSON.stringify(data));
+        passwordRecovery(JSON.stringify(data))
+            .then((res) => {
+                console.log('res: ', res);
+            })
+            .catch((err) => {
+                console.log('error: ', err);
+            })
+            .finally(() => {});
     };
 
     return (

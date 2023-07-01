@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import './style/MainSideBar.scss';
 
-import ModeIcon from './assets/mode.svg?jsx';
+// import ModeIcon from './assets/mode.svg?jsx';
 import HideIcon from './assets/back.svg?jsx';
 import WorldIcon from './assets/world.svg?jsx';
 import ProfileIcon from './assets/profile.svg?jsx';
@@ -45,11 +45,11 @@ const MainSideBar = () => {
         }
     };
 
-    const onChangeMode = () => {
-        mainSideBar.mode === 'STATIC'
-            ? dispatch(setMainSideBar({...mainSideBar, mode: 'DYNAMIC'}))
-            : dispatch(setMainSideBar({...mainSideBar, mode: 'STATIC'}));
-    };
+    // const onChangeMode = () => {
+    //     mainSideBar.mode === 'STATIC'
+    //         ? dispatch(setMainSideBar({...mainSideBar, mode: 'DYNAMIC'}))
+    //         : dispatch(setMainSideBar({...mainSideBar, mode: 'STATIC'}));
+    // };
 
     const onMouseMoveItem = (label) => {
         setShowDescription(true);
