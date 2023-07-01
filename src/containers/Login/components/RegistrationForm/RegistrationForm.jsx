@@ -46,7 +46,6 @@ const RegistrationForm = ({onChangeMode}) => {
     };
 
     const onSubmit = (data) => {
-        console.log('data: ', data);
         registerOnSelf(JSON.stringify(data))
             .then((res) => {
                 console.log('res: ', res);

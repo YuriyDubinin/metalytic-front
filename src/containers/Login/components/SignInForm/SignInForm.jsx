@@ -39,8 +39,6 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     };
 
     const onSubmit = (data) => {
-        // console.log('submitted data: ', JSON.stringify(data));
-
         login(JSON.stringify(data))
             .then((res) => {
                 localStorage.setItem('authorization', res?.accessToken);
