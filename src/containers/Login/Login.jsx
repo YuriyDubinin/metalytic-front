@@ -25,10 +25,16 @@ const Login = ({onCloseModal}) => {
                     />
                 )}
                 {!isAuth && mode === 'REGISTRATION' && (
-                    <RegistrationForm onChangeMode={(mode) => setMode(mode)} />
+                    <RegistrationForm
+                        onChangeMode={(mode) => setMode(mode)}
+                        onCloseModal={onCloseModal}
+                    />
                 )}
                 {!isAuth && mode === 'PASSWORD_RECOVERY' && (
-                    <PasswordRecoveryForm onChangeMode={(mode) => setMode(mode)} />
+                    <PasswordRecoveryForm
+                        onChangeMode={(mode) => setMode(mode)}
+                        onCloseModal={onCloseModal}
+                    />
                 )}
                 {mode === 'LOGOUT' && <LogoutForm onCloseModal={onCloseModal} />}
             </div>

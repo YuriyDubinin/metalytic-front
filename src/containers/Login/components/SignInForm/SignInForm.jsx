@@ -9,6 +9,8 @@ import Loader from '../../../../components/Loader/Loader';
 import InfoIcon from './assets/info.svg?jsx';
 import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
+import BrokenIcon from './assets/broken.svg?jsx';
+import InWorldIcon from './assets/in-world.svg?jsx';
 
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
 import {setIsAuth} from '../../../../slices/mainSlice';
@@ -19,6 +21,7 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     const [passwordType, setPasswordType] = useState('password');
     const [isFetching, setFetching] = useState(false);
     const [isSuccess, setSuccess] = useState(null);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const dispatch = useDispatch();
 
@@ -42,16 +45,30 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     };
 
     const onSubmit = (data) => {
+        setFetching(true);
+
         login(JSON.stringify(data))
             .then((res) => {
+                console.log('res: ', res);
+
                 localStorage.setItem('authorization', res?.accessToken);
                 dispatch(setIsAuth(true));
-                onCloseModal();
+                setSuccess(true);
+                setErrorMessage('');
+                setFetching(false);
+
+                setTimeout(() => onCloseModal(), 3000);
             })
             .catch((err) => {
                 console.log('error: ', err);
+
+                setSuccess(false);
+                setErrorMessage(err?.message);
+                setFetching(false);
             })
-            .finally(() => {});
+            .finally(() => {
+                setFetching(false);
+            });
 
         // fake admin
         // if (data.email === 'admin@ololo.com') {
@@ -65,6 +82,27 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
             {isFetching && (
                 <div className="sign-in-from__feedback">
                     <Loader />
+                </div>
+            )}
+            {!isFetching && isSuccess === false && (
+                <div className="sign-in-from__feedback">
+                    <div className="sign-in-from__feedback_icon">
+                        <BrokenIcon />
+                    </div>
+                    <h3>Провал</h3>
+                    <p>{errorMessage}</p>
+                    <button className="sign-in-from__feedback_btn" onClick={() => onCloseModal()}>
+                        Жаль
+                    </button>
+                </div>
+            )}
+            {!isFetching && isSuccess === true && (
+                <div className="sign-in-from__feedback">
+                    <div className="sign-in-from__feedback_icon">
+                        <InWorldIcon />
+                    </div>
+                    <h3>Успех</h3>
+                    <p>{`Добро пожаловать`}</p>
                 </div>
             )}
             {!isFetching && isSuccess === null && (
