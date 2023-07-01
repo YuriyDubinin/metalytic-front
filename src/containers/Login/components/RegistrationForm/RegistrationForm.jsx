@@ -27,7 +27,8 @@ const RegistrationForm = ({onChangeMode}) => {
     } = useForm({
         mode: 'all',
         defaultValues: {
-            fullName: '',
+            firstName: '',
+            lastName: '',
             phone: '',
             email: '',
             password: '',
@@ -36,14 +37,16 @@ const RegistrationForm = ({onChangeMode}) => {
     });
 
     const fieldDescription = {
-        fullName: 'Фамилия Имя Отчество (через пробел)',
-        phone: 'Номер телефона, начиная с символа "+"',
+        firstName: 'Имя',
+        lastName: 'Фамилия',
+        phone: 'Номер телефона (11 цифр)',
         email: 'Емейл должен быть написан в стандартном формате и содержать в себе символ "@"',
         password:
             'Пароль должен содержать минимум 6 символов, одну заглавную букву, одну прописную букву, одну цифру, один специальный символ (только английский язык)',
     };
 
     const onSubmit = (data) => {
+        console.log('data: ', data);
         registerOnSelf(JSON.stringify(data))
             .then((res) => {
                 console.log('res: ', res);
@@ -69,7 +72,7 @@ const RegistrationForm = ({onChangeMode}) => {
                         <div
                             className="sign-in-form__info-icon"
                             onClick={() => {
-                                toast(fieldDescription.fullName, {
+                                toast(fieldDescription.firstName, {
                                     icon: 'ℹ️',
                                 });
                             }}
@@ -78,14 +81,38 @@ const RegistrationForm = ({onChangeMode}) => {
                         </div>
                         <input
                             className="default-form__input"
-                            placeholder="Полное имя"
-                            {...register('fullName', {
+                            placeholder="Имя"
+                            {...register('firstName', {
                                 validate: (value) => validateForWordsOnly(value, true),
                             })}
                         />
-                        {errors.fullName && (
+                        {errors.firstName && (
                             <span className="default-form__error-message">
-                                {errors.fullName?.message}
+                                {errors.firstName?.message}
+                            </span>
+                        )}
+                    </div>
+                    <div className="default-form__input-wrapper registration-form__full-name">
+                        <div
+                            className="sign-in-form__info-icon"
+                            onClick={() => {
+                                toast(fieldDescription.lastName, {
+                                    icon: 'ℹ️',
+                                });
+                            }}
+                        >
+                            <InfoIcon />
+                        </div>
+                        <input
+                            className="default-form__input"
+                            placeholder="Фамилия"
+                            {...register('lastName', {
+                                validate: (value) => validateForWordsOnly(value, true),
+                            })}
+                        />
+                        {errors.lastName && (
+                            <span className="default-form__error-message">
+                                {errors.lastName?.message}
                             </span>
                         )}
                     </div>

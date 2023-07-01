@@ -37,7 +37,7 @@ export function validatePassword(value, isRequired = false) {
 // phone validation
 export function validatePhone(value, isRequired = false) {
     const isFilled = value.trim() !== '' ? true : false;
-    const regExp = /^[0-9]{,11}$/;
+    const regExp = /^[0-9]{11}$/;
     const isValid = regExp.test(value);
 
     if (isRequired && !isFilled) {
