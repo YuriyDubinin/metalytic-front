@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 
 import './style/SignInForm.scss';
 
+import Loader from '../../../../components/Loader/Loader';
 import InfoIcon from './assets/info.svg?jsx';
 import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
@@ -63,6 +64,7 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
         <div className="sign-in-from">
             {isFetching && (
                 <div className="sign-in-from__feedback">
+                    <Loader />
                 </div>
             )}
             {!isFetching && isSuccess === null && (
