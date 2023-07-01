@@ -12,7 +12,7 @@ import OpenEyeIcon from './assets/eye-open.svg?jsx';
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
 import {setIsAuth} from '../../../../slices/mainSlice';
 
-import {login} from './actions/signInApi';
+import {login} from './actions/signInFormApi';
 
 const SignInForm = ({onChangeMode, onCloseModal}) => {
     const [passwordType, setPasswordType] = useState('password');
@@ -41,7 +41,7 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     const onSubmit = (data) => {
         console.log('submitted data: ', JSON.stringify(data));
 
-        login()
+        login(data)
             .then((res) => {
                 localStorage.setItem('authorizationToken', res?.accessToken);
                 dispatch(setIsAuth(true));

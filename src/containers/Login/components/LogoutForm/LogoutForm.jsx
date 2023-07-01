@@ -5,8 +5,7 @@ import './style/LogoutForm.scss';
 
 import {setIsAuth} from '../../../../slices/mainSlice';
 
-import {clearStorages} from './actions/logoutApi';
-
+import {clearStorages} from './actions/logoutFormApi';
 
 const LogoutForm = ({onCloseModal}) => {
     const dispatch = useDispatch();
