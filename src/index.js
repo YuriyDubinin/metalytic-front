@@ -11,11 +11,9 @@ import App from './app/App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </>,
+    <Provider store={store}>
+        <App />
+    </Provider>,
 );
 
 const devMode = process.env.NODE_ENV === 'development';
