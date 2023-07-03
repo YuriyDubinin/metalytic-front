@@ -70,7 +70,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.scss'],
+        extensions: ['*', '.js', '.ts', '.jsx', '.scss'],
     },
     devServer: {
         port: 3000,
