@@ -9,76 +9,65 @@
     width: 100%;
     height: 100%;
     padding: 30px;
+}
 
-    :nth-child(1) {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        height: 55%;
-        width: 35%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease forwards;
-    }
+.personal-profile-page__main-info-card {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 55%;
+    width: 35%;
+    border-radius: 25px;
+    animation: neuro-light-appearance 0.3s ease forwards;
+}
 
-    :nth-child(2) {
-        position: absolute;
-        bottom: 5%;
-        left: 5%;
-        height: 30%;
-        width: 35%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease 0.1s forwards;
-    }
+.personal-profile-page__wallets {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    height: 30%;
+    width: 35%;
+    border-radius: 25px;
+    animation: neuro-light-appearance 0.3s ease 0.2s forwards;
+}
 
-    :nth-child(2) {
-        position: absolute;
-        bottom: 5%;
-        left: 5%;
-        height: 30%;
-        width: 35%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease 0.2s forwards;
-    }
+.personal-profile-page__currencies {
+    position: absolute;
+    top: 5%;
+    left: 43%;
+    height: 25%;
+    width: 30%;
+    border-radius: 25px;
+    animation: neuro-light-appearance 0.3s ease 0.4s forwards;
+}
 
-    :nth-child(3) {
-        position: absolute;
-        top: 5%;
-        left: 43%;
-        height: 25%;
-        width: 30%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease 0.4s forwards;
-    }
+.personal-profile-page__documents {
+    position: absolute;
+    bottom: 5%;
+    left: 43%;
+    height: 60%;
+    width: 30%;
+    border-radius: 25px;
+    animation: neuro-light-appearance 0.3s ease 0.3s forwards;
+}
 
-    :nth-child(4) {
-        position: absolute;
-        bottom: 5%;
-        left: 43%;
-        height: 60%;
-        width: 30%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease 0.3s forwards;
-    }
+.personal-profile-page__activity {
+    z-index: 3;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height: 35%;
+    width: 19%;
+    border-radius: 50%;
+    animation: neuro-light-appearance 0.3s ease 0.6s forwards;
+}
 
-    // circle
-    :nth-child(5) {
-        z-index: 3;
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        height: 35%;
-        width: 19%;
-        border-radius: 50%;
-        animation: neuro-light-appearance 0.3s ease 0.6s forwards;
-    }
-
-    :nth-child(6) {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        height: 50%;
-        width: 19%;
-        border-radius: 25px;
-        animation: neuro-light-appearance 0.3s ease 0.5s forwards;
-    }
+.personal-profile-page__activity-description {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    height: 50%;
+    width: 19%;
+    border-radius: 25px;
+    animation: neuro-light-appearance 0.3s ease 0.5s forwards;
 }

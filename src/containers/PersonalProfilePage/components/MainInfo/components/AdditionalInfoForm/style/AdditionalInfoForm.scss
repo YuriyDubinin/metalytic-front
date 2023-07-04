@@ -1,4 +1,4 @@
-.sign-in-from {
+.additional-info-from {
     min-width: 20vw;
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
     }
 }
 
-.sign-in-from__row {
+.additional-info-from__row {
     width: 100%;
     height: 100%;
     display: flex;
@@ -22,7 +22,7 @@
     color: var(--app-form-color);
 }
 
-.sign-in-from__header {
+.additional-info-from__header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,14 +37,14 @@
     }
 }
 
-.sign-in-from__body {
+.additional-info-from__body {
     width: 80%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.sign-in-form__info-icon {
+.additional-info-form__info-icon {
     display: flex;
     align-items: center;
     position: absolute;
@@ -58,7 +58,7 @@
     }
 }
 
-.sign-in-form__eye-icon {
+.additional-info-form__eye-icon {
     position: absolute;
     top: 10px;
     right: 5px;
@@ -70,60 +70,31 @@
     }
 }
 
-.sign-in-form__email {
+.additional-info-form__country {
     opacity: 0;
     position: relative;
     animation: default-form-child-appearance 0.3s ease forwards;
 }
 
-.sign-in-form__password {
+.additional-info-form__birth-date {
     opacity: 0;
     position: relative;
     animation: default-form-child-appearance 0.3s ease 0.1s forwards;
 }
 
-.sign-in-form__remember-me {
-    opacity: 0;
-    position: relative;
-    animation: default-form-child-appearance 0.3s ease 0.2s forwards;
-}
+// .additional-info-form__repeat-password {
+//     opacity: 0;
+//     position: relative;
+//     animation: default-form-child-appearance 0.3s ease 0.2s forwards;
+// }
 
-.sign-in-form__submit-btn {
+.additional-info-form__submit-btn {
     opacity: 0;
     position: relative;
     animation: default-form-child-appearance 0.3s ease 0.3s forwards;
 }
 
-.sign-in-from__footer {
-    font-size: 14px;
-    opacity: 0;
-    position: relative;
-    animation: simple-appearance 0.3s ease 0.4s forwards;
-}
-
-.sign-in-from__change-mode {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-
-    p {
-        display: inline;
-        cursor: pointer;
-        color: var(--app-link-color);
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: var(--app-link-hover);
-        }
-    }
-
-    span {
-        display: inline;
-        margin-right: 5px;
-    }
-}
-
-.sign-in-from__feedback {
+.additional-info-from__feedback {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -147,7 +118,7 @@
     }
 }
 
-.sign-in-from__feedback_icon {
+.additional-info-from__feedback_icon {
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
@@ -162,7 +133,7 @@
     }
 }
 
-.sign-in-from__feedback_btn {
+.additional-info-from__feedback_btn {
     cursor: pointer;
     padding: 5px 15px;
     border-radius: 6px;
@@ -178,5 +149,36 @@
 
     &:hover {
         opacity: 1;
+    }
+}
+
+.additional-info-form__verify-btn {
+    display: flex;
+    margin-top: 15px;
+    width: 50%;
+    background-color: var(--grey-2);
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 6px;
+    border: 0;
+    outline: none;
+    transition: all 0.3s ease;
+    color: var(--white);
+    opacity: 0.5;
+
+    &:hover {
+        background-color: var(--grey-2);
+        opacity: 1;
+    }
+}
+
+.additional-info-form__verify-btn-icon {
+    max-width: 25px;
+    max-height: 25px;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }

@@ -66,6 +66,25 @@
     }
 }
 
+.main-side-bar__disable-item {
+    cursor: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .main-side-bar__additional {
     border-top: 1px solid var(--app-main-border);
 

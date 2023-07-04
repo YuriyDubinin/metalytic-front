@@ -15,12 +15,15 @@ import WidgetsIcon from './assets/widgets.svg?jsx';
 import PartnersIcon from './assets/partners.svg?jsx';
 import SupportIcon from './assets/support.svg?jsx';
 import NoticeIcon from './assets/notice.svg?jsx';
+import ProfileDisableIcon from './assets/profile-disable.svg?jsx';
+import WidgetsDisableIcon from './assets/widgets-disable.svg?jsx';
+import NoticeDisableIcon from './assets/notice-disable.svg?jsx';
 
 import Modal from '../../../components/Modal/Modal';
 import Notifications from '../../../components/Notifications/Notifications';
 import MainSideBarDescriptor from './components/MainSideBarDescriptor/MainSideBarDescriptor';
 
-import {selectMainSideBar, setMainSideBar} from '../../../slices/mainSlice';
+import {selectMainSideBar, setMainSideBar, selectIsAuth} from '../../../slices/mainSlice';
 
 const MainSideBar = () => {
     const [isModal, setModal] = useState(false);
@@ -28,6 +31,7 @@ const MainSideBar = () => {
     const [itemLabel, setItemLabel] = useState('');
 
     const mainSideBar = useSelector(selectMainSideBar);
+    const isAuth = useSelector(selectIsAuth);
 
     const dispatch = useDispatch();
 
@@ -95,23 +99,30 @@ const MainSideBar = () => {
                             </MainSideBarDescriptor>
                         )}
                     </li>
-                    <li
-                        onMouseMove={() => onMouseMoveItem('ПРОФИЛЬ')}
-                        onMouseOut={() => onMouseOutItem()}
-                    >
-                        <NavLink
-                            to={'/profile'}
-                            className="main-side-bar__main-item"
-                            activeclassname="main-side-bar__main-item_active"
+                    {isAuth && (
+                        <li
+                            onMouseMove={() => onMouseMoveItem('ПРОФИЛЬ')}
+                            onMouseOut={() => onMouseOutItem()}
                         >
-                            <ProfileIcon />
-                        </NavLink>
-                        {itemLabel === 'ПРОФИЛЬ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>
-                                {'ПРОФИЛЬ'}
-                            </MainSideBarDescriptor>
-                        )}
-                    </li>
+                            <NavLink
+                                to={'/profile'}
+                                className="main-side-bar__main-item"
+                                activeclassname="main-side-bar__main-item_active"
+                            >
+                                <ProfileIcon />
+                            </NavLink>
+                            {itemLabel === 'ПРОФИЛЬ' && (
+                                <MainSideBarDescriptor showDescription={showDescription}>
+                                    {'ПРОФИЛЬ'}
+                                </MainSideBarDescriptor>
+                            )}
+                        </li>
+                    )}
+                    {!isAuth && (
+                        <li className="main-side-bar__disable-item">
+                            <ProfileDisableIcon />
+                        </li>
+                    )}
                     <li
                         onMouseMove={() => onMouseMoveItem('СПОРТ')}
                         onMouseOut={() => onMouseOutItem()}
@@ -146,23 +157,30 @@ const MainSideBar = () => {
                             </MainSideBarDescriptor>
                         )}
                     </li>
-                    <li
-                        onMouseMove={() => onMouseMoveItem('ВИДЖЕТЫ')}
-                        onMouseOut={() => onMouseOutItem()}
-                    >
-                        <NavLink
-                            to={'/widgets'}
-                            className="main-side-bar__main-item"
-                            activeclassname="main-side-bar__main-item_active"
+                    {isAuth && (
+                        <li
+                            onMouseMove={() => onMouseMoveItem('ВИДЖЕТЫ')}
+                            onMouseOut={() => onMouseOutItem()}
                         >
-                            <WidgetsIcon />
-                        </NavLink>
-                        {itemLabel === 'ВИДЖЕТЫ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>
-                                {'ВИДЖЕТЫ'}
-                            </MainSideBarDescriptor>
-                        )}
-                    </li>
+                            <NavLink
+                                to={'/widgets'}
+                                className="main-side-bar__main-item"
+                                activeclassname="main-side-bar__main-item_active"
+                            >
+                                <WidgetsIcon />
+                            </NavLink>
+                            {itemLabel === 'ВИДЖЕТЫ' && (
+                                <MainSideBarDescriptor showDescription={showDescription}>
+                                    {'ВИДЖЕТЫ'}
+                                </MainSideBarDescriptor>
+                            )}
+                        </li>
+                    )}
+                    {!isAuth && (
+                        <li className="main-side-bar__disable-item">
+                            <WidgetsDisableIcon />
+                        </li>
+                    )}
                     <li
                         onMouseMove={() => onMouseMoveItem('ПАРТНЁРЫ')}
                         onMouseOut={() => onMouseOutItem()}
@@ -199,22 +217,29 @@ const MainSideBar = () => {
                     </li>
                 </ul>
                 <ul className="main-side-bar__additional">
-                    <li
-                        className={classNames({
-                            'main-side-bar__additional-item': true,
-                            'main-side-bar__additional-item_active': false,
-                        })}
-                        onClick={() => setModal(true)}
-                        onMouseMove={() => onMouseMoveItem('УВЕДОМЛЕНИЯ')}
-                        onMouseOut={() => onMouseOutItem()}
-                    >
-                        <NoticeIcon />
-                        {itemLabel === 'УВЕДОМЛЕНИЯ' && (
-                            <MainSideBarDescriptor showDescription={showDescription}>
-                                {'УВЕДОМЛЕНИЯ'}
-                            </MainSideBarDescriptor>
-                        )}
-                    </li>
+                    {isAuth && (
+                        <li
+                            className={classNames({
+                                'main-side-bar__additional-item': true,
+                                'main-side-bar__additional-item_active': false,
+                            })}
+                            onClick={() => setModal(true)}
+                            onMouseMove={() => onMouseMoveItem('УВЕДОМЛЕНИЯ')}
+                            onMouseOut={() => onMouseOutItem()}
+                        >
+                            <NoticeIcon />
+                            {itemLabel === 'УВЕДОМЛЕНИЯ' && (
+                                <MainSideBarDescriptor showDescription={showDescription}>
+                                    {'УВЕДОМЛЕНИЯ'}
+                                </MainSideBarDescriptor>
+                            )}
+                        </li>
+                    )}
+                    {!isAuth && (
+                        <li className="main-side-bar__disable-item">
+                            <NoticeDisableIcon />
+                        </li>
+                    )}
                     {/* <li
                         className={classNames({
                             'main-side-bar__additional-item': true,

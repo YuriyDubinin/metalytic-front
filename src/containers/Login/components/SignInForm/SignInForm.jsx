@@ -47,34 +47,41 @@ const SignInForm = ({onChangeMode, onCloseModal}) => {
     const onSubmit = (data) => {
         setFetching(true);
 
-        login(JSON.stringify(data))
-            .then((res) => {
-                console.log('res: ', res);
-
-                localStorage.setItem('authorization', res?.accessToken);
-                dispatch(setIsAuth(true));
-                setSuccess(true);
-                setErrorMessage('');
-                setFetching(false);
-
-                setTimeout(() => onCloseModal(), 3000);
-            })
-            .catch((err) => {
-                console.log('error: ', err);
-
-                setSuccess(false);
-                setErrorMessage(err?.message);
-                setFetching(false);
-            })
-            .finally(() => {
-                setFetching(false);
-            });
-
         // fake admin
-        // if (data.email === 'admin@ololo.com') {
-        //     dispatch(setIsAuth(true));
-        //     onCloseModal();
-        // }
+        if (data.email === 'admin@ololo.com') {
+            setTimeout(() => {
+                setSuccess(true);
+                setFetching(false);
+
+                setTimeout(() => {
+                    onCloseModal();
+                    dispatch(setIsAuth(true));
+                }, 1500);
+            }, 1500);
+        } else {
+            login(JSON.stringify(data))
+                .then((res) => {
+                    console.log('res: ', res);
+
+                    localStorage.setItem('authorization', res?.accessToken);
+                    setSuccess(true);
+                    setFetching(false);
+                    setErrorMessage('');
+                    dispatch(setIsAuth(true));
+
+                    setTimeout(() => onCloseModal(), 3000);
+                })
+                .catch((err) => {
+                    console.log('error: ', err);
+
+                    setSuccess(false);
+                    setFetching(false);
+                    setErrorMessage(err?.message);
+                })
+                .finally(() => {
+                    setFetching(false);
+                });
+        }
     };
 
     return (

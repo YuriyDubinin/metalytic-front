@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 
 import './style/LogoutForm.scss';
 
@@ -9,10 +10,12 @@ import {clearStorages} from './actions/logoutFormApi';
 
 const LogoutForm = ({onCloseModal}) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const logout = () => {
         clearStorages();
         dispatch(setIsAuth(false));
+        navigate('/');
         onCloseModal();
     };
 

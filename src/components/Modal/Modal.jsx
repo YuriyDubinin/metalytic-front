@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 
-
 import './style/Modal.scss';
 
 const Modal = ({isVisible = false, content, onClose}) => {
