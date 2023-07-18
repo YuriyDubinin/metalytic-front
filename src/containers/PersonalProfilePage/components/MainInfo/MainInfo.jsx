@@ -38,7 +38,7 @@ const MainInfo = () => {
         },
     ];
 
-    const exitingExperienceWidth = '10%';
+    const exitingExperienceWidth = '25%';
 
     const fieldDescription = {
         experience: `Текущий опыт: ${'100'} \nСледующий уровень на: ${'1000'}`,

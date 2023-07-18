@@ -1,0 +1,134 @@
+.internal-currency {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    opacity: 0;
+    animation: simple-appearance 0.3s ease 0.2s forwards;
+    color: var(--app-text-color-1);
+    display: flex;
+    flex-direction: column;
+}
+
+.internal-currency__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.internal-currency__currency {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    p {
+        font-weight: 600;
+    }
+}
+
+.internal-currency__personal-status {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-right: 10px;
+    }
+}
+
+.internal-currency__badge {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.internal-currency__replenish-balance {
+    button {
+        cursor: pointer;
+        display: inline;
+        padding: 5px 15px;
+        border-radius: 6px;
+        border: 0;
+        outline: none;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background-color: var(--grey-3);
+        color: var(--white);
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.internal-currency__body {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: inset 10px 10px 30px #bebebe, inset -10px -10px 30px #ffffff;
+    padding: 0 15px;
+    overflow: auto;
+}
+
+.internal-currency__body-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        animation: simple-shining 3s ease infinite;
+    }
+}
+
+.internal-currency__body-item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+
+    &:hover {
+        background-color: var(--grey-ce);
+    }
+}
+
+.internal-currency__body-item-currency {
+    display: flex;
+    align-items: center;
+
+    p {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.internal-currency__body-item-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.internal-currency__body-item-action {
+}
+
+.internal-currency__body-item-date {
+    color: var(--app-text-color-2);
+}

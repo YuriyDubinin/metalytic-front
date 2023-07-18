@@ -29,6 +29,13 @@
     &:focus {
         outline: none;
     }
+
+    &_read-only {
+        background-color: var(--grey-e);
+        cursor: auto;
+        color: var(--grey-1);
+        text-overflow: ellipsis;
+    }
 }
 
 .default-form__select {

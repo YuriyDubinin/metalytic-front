@@ -37,7 +37,7 @@ const Wallets = () => {
             <ul className="wallets__body">
                 {wallets && wallets.length === 0 && (
                     <li className="wallets__body-empty">
-                        <span>No connected wallets or cards</span>
+                        <span>Нет подключённых вошельков или карт</span>
                     </li>
                 )}
                 {wallets &&

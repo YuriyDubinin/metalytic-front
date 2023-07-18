@@ -62,6 +62,58 @@ const initialState = {
             connected: true,
         },
     ],
+    internalCurrencLogs: [
+        {
+            currency: 50,
+            action: 'Регистрация аккаунта',
+            date: '1.07.2023',
+        },
+        {
+            currency: 50,
+            action: 'Верификация почты',
+            date: '1.07.2023',
+        },
+        {
+            currency: 10,
+            action: 'Заполнение доп.данных',
+            date: '4.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление MetaMsk',
+            date: '11.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление Binance',
+            date: '11.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление Tron',
+            date: '11.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление Trust Wallet',
+            date: '11.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление Tinkoff',
+            date: '18.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление Sberbank',
+            date: '18.07.2023',
+        },
+        {
+            currency: 20,
+            action: 'Добавление RNCB',
+            date: '18.07.2023',
+        },
+    ],
 };
 
 export const mainSlice = createSlice({
@@ -82,14 +134,19 @@ export const mainSlice = createSlice({
         setWallets: (state, action) => {
             state.wallets = action.payload;
         },
+        setInternalCurrencyLogs: (state, action) => {
+            state.internalCurrencLogs = action.payload;
+        },
     },
 });
 
-export const {setIsAuth, setCustomSettings, setMainSideBar, setWallets} = mainSlice.actions;
+export const {setIsAuth, setCustomSettings, setMainSideBar, setWallets, setInternalCurrencyLogs} =
+    mainSlice.actions;
 
 export const selectIsAuth = (state) => state.general.isAuth;
 export const selectCustommSettings = (state) => state.general.customSettings;
 export const selectMainSideBar = (state) => state.general.customSettings.mainSideBar;
 export const selectWallets = (state) => state.general.wallets;
+export const selectInternalCurrencyLogs = (state) => state.general.internalCurrencLogs;
 
 export default mainSlice.reducer;
