@@ -51,23 +51,12 @@
     animation: neuro-light-appearance 0.3s ease 0.2s forwards;
 }
 
-.personal-profile-page__activity {
-    z-index: 3;
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    height: 35%;
-    width: 19%;
-    border-radius: 50%;
-    animation: neuro-light-appearance 0.3s ease 0.4s forwards;
-}
-
 .personal-profile-page__activity-description {
     position: absolute;
     bottom: 5%;
     right: 5%;
-    height: 50%;
+    height: 90%;
     width: 19%;
     border-radius: 25px;
-    animation: neuro-light-appearance 0.3s ease 0.5s forwards;
+    animation: neuro-light-appearance 0.3s ease 0.4s forwards;
 }

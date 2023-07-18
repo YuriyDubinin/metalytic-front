@@ -5,6 +5,7 @@ import './style/PersonalProfilePage.scss';
 import MainInfo from './components/MainInfo/MainInfo';
 import Wallets from './components/Wallets/Wallets';
 import InternalCurrency from './components/InternalCurrency/InternalCurrency';
+import Documents from './components/Documents/Documents';
 
 const PersonalProfilePage = () => {
     return (
@@ -19,8 +20,9 @@ const PersonalProfilePage = () => {
                 <li className="personal-profile-page__currencies">
                     <InternalCurrency />
                 </li>
-                <li className="personal-profile-page__documents"></li>
-                <li className="personal-profile-page__activity"></li>
+                <li className="personal-profile-page__documents">
+                    {/* <Documents /> */}
+                </li>
                 <li className="personal-profile-page__activity-description"></li>
             </ul>
         </div>
