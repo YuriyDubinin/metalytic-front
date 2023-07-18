@@ -3,6 +3,7 @@ import React from 'react';
 import './style/PersonalProfilePage.scss';
 
 import MainInfo from './components/MainInfo/MainInfo';
+import Wallets from './components/Wallets/Wallets';
 
 const PersonalProfilePage = () => {
     return (
@@ -11,7 +12,9 @@ const PersonalProfilePage = () => {
                 <li className="personal-profile-page__main-info-card">
                     <MainInfo />
                 </li>
-                <li className="personal-profile-page__wallets"></li>
+                <li className="personal-profile-page__wallets">
+                    <Wallets />
+                </li>
                 <li className="personal-profile-page__currencies"></li>
                 <li className="personal-profile-page__documents"></li>
                 <li className="personal-profile-page__activity"></li>

@@ -7,9 +7,8 @@ import './style/AdditionalInfoForm.scss';
 import Loader from '../../../../../../components/Loader/Loader';
 import InfoIcon from './assets/info.svg?jsx';
 import MessagesIcon from './assets/messages.svg?jsx';
-
-import BrokenIcon from './assets/broken.svg?jsx';
-import InWorldIcon from './assets/in-world.svg?jsx';
+import SuccessIcon from './assets/success-default.svg?jsx';
+import FailedIcon from './assets/failed-default.svg?jsx';
 
 import {validateForWordsOnly} from '../../../../../../helpers/Validation';
 
@@ -42,6 +41,7 @@ const AdditionalInfoForm = ({onCloseModal}) => {
         setFetching(true);
 
         console.log('data: ', data);
+        toast.success(`Метод для добавления кошелька / карты`);
 
         // login(JSON.stringify(data))
         //     .then((res) => {
@@ -76,7 +76,7 @@ const AdditionalInfoForm = ({onCloseModal}) => {
             {!isFetching && isSuccess === false && (
                 <div className="additional-info-from__feedback">
                     <div className="additional-info-from__feedback_icon">
-                        <BrokenIcon />
+                        <FailedIcon />
                     </div>
                     <h3>Провал</h3>
                     <p>{errorMessage}</p>
@@ -91,7 +91,7 @@ const AdditionalInfoForm = ({onCloseModal}) => {
             {!isFetching && isSuccess === true && (
                 <div className="additional-info-from__feedback">
                     <div className="additional-info-from__feedback_icon">
-                        <InWorldIcon />
+                        <SuccessIcon />
                     </div>
                     <h3>Успех</h3>
                     <p>{`Добро пожаловать`}</p>

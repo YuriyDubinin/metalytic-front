@@ -8,8 +8,8 @@ import Loader from '../../../../../../components/Loader/Loader';
 import InfoIcon from './assets/info.svg?jsx';
 import ClosedEyeIcon from './assets/eye-closed.svg?jsx';
 import OpenEyeIcon from './assets/eye-open.svg?jsx';
-import BrokenIcon from './assets/broken.svg?jsx';
-import InWorldIcon from './assets/in-world.svg?jsx';
+import SuccessIcon from './assets/success-default.svg?jsx';
+import FailedIcon from './assets/failed-default.svg?jsx';
 
 import {validatePassword} from '../../../../../../helpers/Validation';
 
@@ -45,6 +45,7 @@ const ChangePasswordForm = ({onCloseModal}) => {
         setFetching(true);
 
         console.log('data: ', data);
+        toast.success(`Метод для удаления смены пароля`);
 
         // login(JSON.stringify(data))
         //     .then((res) => {
@@ -79,10 +80,10 @@ const ChangePasswordForm = ({onCloseModal}) => {
             {!isFetching && isSuccess === false && (
                 <div className="change-password-from__feedback">
                     <div className="change-password-from__feedback_icon">
-                        <BrokenIcon />
+                        <FailedIcon />
                     </div>
                     <h3>Провал</h3>
-                    <p>{errorMessage}</p>
+                    <p>{errorMessage || 'Что-то пошло не так...'}</p>
                     <button
                         className="change-password-from__feedback_btn"
                         onClick={() => onCloseModal()}
@@ -94,7 +95,7 @@ const ChangePasswordForm = ({onCloseModal}) => {
             {!isFetching && isSuccess === true && (
                 <div className="change-password-from__feedback">
                     <div className="change-password-from__feedback_icon">
-                        <InWorldIcon />
+                        <SuccessIcon />
                     </div>
                     <h3>Успех</h3>
                     <p>{`Добро пожаловать`}</p>

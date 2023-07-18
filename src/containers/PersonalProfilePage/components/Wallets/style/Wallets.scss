@@ -1,0 +1,140 @@
+.wallets {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    opacity: 0;
+    animation: simple-appearance 0.3s ease 0.1s forwards;
+    color: var(--app-text-color-1);
+    display: flex;
+    flex-direction: column;
+}
+
+.wallets__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.wallets__add-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-width: 30px;
+    max-height: 30px;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        transform: scale(1.12);
+    }
+}
+
+.wallets__body {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: inset 10px 10px 30px #bebebe, inset -10px -10px 30px #ffffff;
+    padding: 0 15px;
+    overflow: auto;
+}
+
+.wallets__body-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        animation: simple-shining 3s ease infinite;
+    }
+}
+
+.wallets__body-item {
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+
+    &:hover {
+        background-color: var(--grey-ce);
+    }
+}
+
+.wallets__body-item-logo {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.wallets__body-item-name {
+    margin-right: 10px;
+
+    span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.wallets__body-item-key {
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 10px;
+        max-width: 30px;
+        height: 30px;
+        opacity: 0.2;
+    }
+
+    input {
+        font-size: 16px;
+        border: none;
+        cursor: copy;
+        border-radius: 4px;
+        background-color: transparent;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: none;
+        color: var(--app-text-color-1);
+    }
+}
+
+.wallets__body-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.wallets__body-item-action-icon {
+    max-width: 30px;
+    max-height: 30px;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        transform: scale(1.12);
+    }
+}

@@ -1,6 +1,7 @@
 @import './Animations.scss';
 @import './DefaultForm.scss';
 @import './Badge.scss';
+@import './Scrollbar.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
 * {
@@ -96,7 +97,7 @@ code {
     --info: var(--blue);
 }
 
-// themes
+// Themes
 body.default-theme {
     --app-main-side-bar: var(--grey-2);
     --app-main-border: var(--grey-1);
