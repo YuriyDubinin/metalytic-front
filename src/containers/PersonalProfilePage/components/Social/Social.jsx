@@ -66,13 +66,13 @@ const Social = () => {
                                     />
                                 </div>
                                 <div className="social__body-item-actions">
-                                    <div
+                                    {/* <div
                                         className="social__body-item-action-icon"
                                         title="Скопировать ссылку"
                                         onClick={() => onCopySocial(`data-social=${item.id}`)}
                                     >
                                         <CopyIcon />
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="social__body-item-action-icon"
                                         title="Удалить"

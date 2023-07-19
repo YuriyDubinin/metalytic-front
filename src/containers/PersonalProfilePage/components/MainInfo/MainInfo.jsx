@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import moment from 'moment';
+import {useSelector} from 'react-redux';
 import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 import toast from 'react-hot-toast';
+import moment from 'moment';
 
 import './style/MainInfo.scss';
 
@@ -15,39 +16,24 @@ import Modal from '../../../../components/Modal/Modal';
 import ChangePasswordForm from './components/ChangePasswordForm/ChangePasswordForm';
 import AdditionalInfoForm from './components/AdditionalInfoForm/AdditionalInfoForm';
 
+import {selectActivity} from '../../../../slices/mainSlice';
+
 const MainInfo = () => {
+    const activity = useSelector(selectActivity);
+
     const [changePasswordModal, setChangePasswordModal] = useState(false);
     const [additionalInfoModal, setAdditionalInfoModal] = useState(false);
-
-    const testData = [
-        {
-            date: '1.07',
-            activeTime: 3.2,
-        },
-        {
-            date: '2.07',
-            activeTime: 1.3,
-        },
-        {
-            date: '3.07',
-            activeTime: 1.7,
-        },
-        {
-            date: '4.07',
-            activeTime: 0.8,
-        },
-    ];
 
     const exitingExperienceWidth = '25%';
 
     const fieldDescription = {
-        experience: `Текущий опыт: ${'100'} \nСледующий уровень на: ${'1000'}`,
+        experience: `Текущий опыт: ${'250'} \nСледующий уровень на: ${'1000'}`,
         badge: `Статус аккаунта`,
     };
 
     const renderChart = () => (
         <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={testData}>
+            <AreaChart data={activity}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" />
                 <YAxis />
@@ -56,8 +42,8 @@ const MainInfo = () => {
                     type="monotone"
                     dataKey="activeTime"
                     stackId="1"
-                    stroke="var(--app-graphic-color-2)"
-                    fill="var(--app-graphic-color-2)"
+                    stroke="#3182bd"
+                    fill="#3182bd"
                     margin={{
                         top: 0,
                         right: 0,

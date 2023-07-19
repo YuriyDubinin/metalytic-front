@@ -8,6 +8,24 @@ const initialState = {
             mode: 'STATIC',
         },
     },
+    activity: [
+        {
+            date: '1.07',
+            activeTime: 3.2,
+        },
+        {
+            date: '2.07',
+            activeTime: 1.3,
+        },
+        {
+            date: '3.07',
+            activeTime: 1.7,
+        },
+        {
+            date: '4.07',
+            activeTime: 0.8,
+        },
+    ],
     wallets: [
         {
             id: 1,
@@ -146,6 +164,58 @@ const initialState = {
             link: 'https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Dru',
         },
     ],
+    interests: [
+        {
+            name: 'Баскетбол',
+            rate: 45,
+        },
+        {
+            name: 'Хоккей',
+            rate: 15,
+        },
+        {
+            name: 'Волейбол',
+            rate: 20,
+        },
+        {
+            name: 'Крикет',
+            rate: 10,
+        },
+        {
+            name: 'Кёрлинг',
+            rate: 10,
+        },
+        {
+            name: 'Бокс',
+            rate: 15,
+        },
+    ],
+    winRates: [
+        {
+            name: 'Баскетбол',
+            victories: 5,
+        },
+        {
+            name: 'Хоккей',
+            victories: 11,
+        },
+        {
+            name: 'Волейбол',
+            victories: 2,
+        },
+        {
+            name: 'Крикет',
+            victories: 4,
+        },
+        {
+            name: 'Кёрлинг',
+            victories: 3,
+        },
+        {
+            name: 'Бокс',
+            victories: 15,
+        },
+    ],
 };
 
 export const mainSlice = createSlice({
@@ -163,6 +233,9 @@ export const mainSlice = createSlice({
                 mainSideBar: action.payload,
             };
         },
+        setActivity: (state, action) => {
+            state.activity = action.payload;
+        },
         setWallets: (state, action) => {
             state.wallets = action.payload;
         },
@@ -172,6 +245,12 @@ export const mainSlice = createSlice({
         setSocialNetworks: (state, action) => {
             state.socialNetworks = action.payload;
         },
+        setInterests: (state, action) => {
+            state.interests = action.payload;
+        },
+        setWinrates: (state, action) => {
+            state.winRates = action.payload;
+        },
     },
 });
 
@@ -179,16 +258,22 @@ export const {
     setIsAuth,
     setCustomSettings,
     setMainSideBar,
+    setActivity,
     setWallets,
     setInternalCurrencyLogs,
     setSocialNetworks,
+    setInterests,
+    setWinrates,
 } = mainSlice.actions;
 
 export const selectIsAuth = (state) => state.general.isAuth;
 export const selectCustommSettings = (state) => state.general.customSettings;
 export const selectMainSideBar = (state) => state.general.customSettings.mainSideBar;
+export const selectActivity = (state) => state.general.activity;
 export const selectWallets = (state) => state.general.wallets;
 export const selectInternalCurrencyLogs = (state) => state.general.internalCurrencyLogs;
 export const selectSocialNetworks = (state) => state.general.socialNetworks;
+export const selectInterests = (state) => state.general.interests;
+export const selectWinrates = (state) => state.general.winRates;
 
 export default mainSlice.reducer;
