@@ -11,7 +11,7 @@ import FailedIcon from './assets/failed-default.svg?jsx';
 
 import {validateSimpleRequired, validateBankCard} from '../../../../../../helpers/Validation';
 
-const AddWalletForm = ({onCloseModal, wallet}) => {
+const AddWalletForm = ({onCloseModal}) => {
     const [isFetching, setFetching] = useState(false);
     const [isSuccess, setSuccess] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');

@@ -7,8 +7,8 @@ import './style/MainInfo.scss';
 
 import DefaultAvatar from './assets/default-avatar.png';
 import InfoIcon from './assets/info.svg?jsx';
-// import SuccessIcon from './assets/success.svg?jsx';
-import CancelIcon from './assets/cancel.svg?jsx';
+import VerifySuccessIcon from './assets/success.svg?jsx';
+import VerifyCancelIcon from './assets/cancel.svg?jsx';
 import EditIcon from './assets/edit.svg?jsx';
 
 import Modal from '../../../../components/Modal/Modal';
@@ -165,7 +165,7 @@ const MainInfo = () => {
                                 <p>Верифицирован:</p>
                             </div>
                             <div className="main-info__item-verify-icon">
-                                <CancelIcon />
+                                <VerifySuccessIcon />
                             </div>
                         </li>
                     </ul>

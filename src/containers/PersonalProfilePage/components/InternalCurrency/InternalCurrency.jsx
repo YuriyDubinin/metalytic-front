@@ -67,7 +67,7 @@ const InternalCurrency = () => {
                         <p>250</p>
                     </div>
                     <div className="internal-currency__personal-status">
-                        <p>Статус аккаунта: </p>
+                        <p>Статус: </p>
                         <div
                             className="internal-currency__badge badge badge_success"
                             onClick={() => {

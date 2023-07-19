@@ -62,7 +62,7 @@ const initialState = {
             connected: true,
         },
     ],
-    internalCurrencLogs: [
+    internalCurrencyLogs: [
         {
             currency: 50,
             action: 'Регистрация аккаунта',
@@ -114,6 +114,38 @@ const initialState = {
             date: '18.07.2023',
         },
     ],
+    socialNetworks: [
+        {
+            id: 1,
+            networkName: 'Vkontakte',
+            link: 'https://vk.com/jfkshdkfjhsdkfhksdhfksd',
+        },
+        {
+            id: 2,
+            networkName: 'Instagram',
+            link: 'https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F',
+        },
+        {
+            id: 3,
+            networkName: 'Odnoklassniki',
+            link: 'https://ok.ru/ksdjflskdflskdklskdmlfksmdlfkms',
+        },
+        {
+            id: 4,
+            networkName: 'Facebook',
+            link: 'https://ru-ru.facebook.com/sdfishdkjnfksdjnfksndklfnskdf',
+        },
+        {
+            id: 5,
+            networkName: 'Linkedin',
+            link: 'https://ru.linkedin.com/jsjdkfhsldkfhskdhfksldhf',
+        },
+        {
+            id: 6,
+            networkName: 'Twitter',
+            link: 'https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Dru',
+        },
+    ],
 };
 
 export const mainSlice = createSlice({
@@ -135,18 +167,28 @@ export const mainSlice = createSlice({
             state.wallets = action.payload;
         },
         setInternalCurrencyLogs: (state, action) => {
-            state.internalCurrencLogs = action.payload;
+            state.internalCurrencyLogs = action.payload;
+        },
+        setSocialNetworks: (state, action) => {
+            state.socialNetworks = action.payload;
         },
     },
 });
 
-export const {setIsAuth, setCustomSettings, setMainSideBar, setWallets, setInternalCurrencyLogs} =
-    mainSlice.actions;
+export const {
+    setIsAuth,
+    setCustomSettings,
+    setMainSideBar,
+    setWallets,
+    setInternalCurrencyLogs,
+    setSocialNetworks,
+} = mainSlice.actions;
 
 export const selectIsAuth = (state) => state.general.isAuth;
 export const selectCustommSettings = (state) => state.general.customSettings;
 export const selectMainSideBar = (state) => state.general.customSettings.mainSideBar;
 export const selectWallets = (state) => state.general.wallets;
-export const selectInternalCurrencyLogs = (state) => state.general.internalCurrencLogs;
+export const selectInternalCurrencyLogs = (state) => state.general.internalCurrencyLogs;
+export const selectSocialNetworks = (state) => state.general.socialNetworks;
 
 export default mainSlice.reducer;

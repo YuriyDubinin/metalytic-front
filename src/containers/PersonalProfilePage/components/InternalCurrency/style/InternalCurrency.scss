@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-right: 10px;
 
     svg {
         width: 30px;
@@ -38,13 +39,14 @@
     align-items: center;
 
     p {
-        margin-right: 10px;
+        margin-right: 5px;
     }
 }
 
 .internal-currency__badge {
     cursor: pointer;
     font-size: 0.9rem;
+    margin-right: 5px;
 }
 
 .internal-currency__replenish-balance {
@@ -104,6 +106,7 @@
 .internal-currency__body-item-currency {
     display: flex;
     align-items: center;
+    margin-right: 10px;
 
     p {
         font-size: 16px;

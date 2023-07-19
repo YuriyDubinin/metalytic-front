@@ -1,40 +1,38 @@
 import React, {useState} from 'react';
 import toast from 'react-hot-toast';
 
-import './style/RemoveWalletForm.scss';
+import './style/RemoveSocialForm.scss';
 
 import Loader from '../../../../../../components/Loader/Loader';
 import SuccessIcon from './assets/success-default.svg?jsx';
 import FailedIcon from './assets/failed-default.svg?jsx';
 
-const RemoveWalletForm = ({onCloseModal, wallet}) => {
+const RemoveSocialForm = ({onCloseModal, social}) => {
     const [isFetching, setFetching] = useState(false);
     const [isSuccess, setSuccess] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
 
     const onSubmit = () => {
         setFetching(true);
-        toast.success(
-            `Метод для удаления ${wallet.walletName || wallet.bankName}, id: ${wallet.id}`,
-        );
+        toast.success(`Метод для удаления ${social.networkName}, id: ${social.id}`);
     };
 
     return (
-        <div className="remove-wallet-form">
+        <div className="remove-social-form">
             {isFetching && (
-                <div className="remove-wallet-form__feedback">
+                <div className="remove-social-form__feedback">
                     <Loader />
                 </div>
             )}
             {!isFetching && isSuccess === false && (
-                <div className="remove-wallet-form__feedback">
-                    <div className="remove-wallet-form__feedback_icon">
+                <div className="remove-social-form__feedback">
+                    <div className="remove-social-form__feedback_icon">
                         <FailedIcon />
                     </div>
                     <h3>Провал</h3>
                     <p>{errorMessage}</p>
                     <button
-                        className="remove-wallet-form__feedback_btn"
+                        className="remove-social-form__feedback_btn"
                         onClick={() => onCloseModal()}
                     >
                         Жаль
@@ -42,33 +40,29 @@ const RemoveWalletForm = ({onCloseModal, wallet}) => {
                 </div>
             )}
             {!isFetching && isSuccess === true && (
-                <div className="remove-wallet-form__feedback">
-                    <div className="remove-wallet-form__feedback_icon">
+                <div className="remove-social-form__feedback">
+                    <div className="remove-social-form__feedback_icon">
                         <SuccessIcon />
                     </div>
                     <h3>Успех</h3>
-                    <p>{`${
-                        wallet.walletName || wallet.bankName
-                    } успешно удалён из списка кошельков`}</p>
+                    <p>{`${social.networkName} успешно удалён из списка социальных сетей`}</p>
                 </div>
             )}
             {!isFetching && isSuccess === null && (
-                <div className="remove-wallet-form__row">
-                    <div className="remove-wallet-form__header">
+                <div className="remove-social-form__row">
+                    <div className="remove-social-form__header">
                         <h3>Удалить</h3>
-                        <span>{`Вы уверены что хотите удалить свой ${
-                            wallet.walletName || wallet.bankName
-                        }?`}</span>
+                        <span>{`Вы уверены что хотите удалить свой ${social.networkName}?`}</span>
                     </div>
-                    <div className="remove-wallet-form__body">
+                    <div className="remove-social-form__body">
                         <button
-                            className="remove-wallet-form__btn remove-wallet-form__btn_accept"
+                            className="remove-social-form__btn remove-social-form__btn_accept"
                             onClick={() => onSubmit()}
                         >
                             Да
                         </button>
                         <button
-                            className="remove-wallet-form__btn remove-wallet-form__btn_cancel"
+                            className="remove-social-form__btn remove-social-form__btn_cancel"
                             onClick={() => onCloseModal()}
                         >
                             Нет
@@ -80,4 +74,4 @@ const RemoveWalletForm = ({onCloseModal, wallet}) => {
     );
 };
 
-export default RemoveWalletForm;
+export default RemoveSocialForm;
