@@ -9,8 +9,6 @@ import {selectInterests} from '../../../../../../slices/mainSlice';
 const DetailedInterests = () => {
     const interests = useSelector(selectInterests);
 
-    console.log('interests: ', interests);
-
     const renderChart = () => {
         return (
             <ResponsiveContainer width="100%" height="100%">
