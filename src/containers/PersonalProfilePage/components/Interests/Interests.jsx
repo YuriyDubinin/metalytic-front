@@ -10,7 +10,7 @@ import InfoIcon from './assets/info-square.svg?jsx';
 import Modal from '../../../../components/Modal/Modal';
 import DetailedInterests from './components/DetailedWinRate/DetailedInterests';
 
-import {selectInterests} from '../../../../slices/mainSlice';
+import {selectInterests} from '../../../../redux';
 
 const Interests = () => {
     const interests = useSelector(selectInterests);

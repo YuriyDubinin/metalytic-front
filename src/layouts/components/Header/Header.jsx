@@ -10,7 +10,7 @@ import CircleDisableIcon from './assets/circledisable.svg?jsx';
 import Modal from '../../../components/Modal/Modal';
 import Login from '../../../containers/Login/Login';
 
-import {selectIsAuth} from '../../../slices/mainSlice';
+import {selectIsAuth} from '../../../redux';
 
 const Header = () => {
     const [loginModal, setLoginModal] = useState(false);

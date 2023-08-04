@@ -11,7 +11,7 @@ import {useSelector} from 'react-redux';
 
 import './style/DetailedWinRate.scss';
 
-import {selectWinrates} from '../../../../../../slices/mainSlice';
+import {selectWinrates} from '../../../../../../redux';
 
 const DetailedWinRate = () => {
     const winRates = useSelector(selectWinrates);

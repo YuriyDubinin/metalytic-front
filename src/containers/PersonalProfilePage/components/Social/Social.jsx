@@ -20,7 +20,7 @@ import RemoveSocialForm from './components/RemoveSocialForm/RemoveSocialForm';
 
 import copyText from '../../../../helpers/copyText';
 
-import {selectSocialNetworks} from '../../../../slices/mainSlice';
+import {selectSocialNetworks} from '../../../../redux';
 
 const Social = () => {
     const [addSocialModal, setAddSocialModal] = useState(false);

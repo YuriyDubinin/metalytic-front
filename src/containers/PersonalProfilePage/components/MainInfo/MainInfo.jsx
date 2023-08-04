@@ -16,7 +16,7 @@ import Modal from '../../../../components/Modal/Modal';
 import ChangePasswordForm from './components/ChangePasswordForm/ChangePasswordForm';
 import AdditionalInfoForm from './components/AdditionalInfoForm/AdditionalInfoForm';
 
-import {selectActivity} from '../../../../slices/mainSlice';
+import {selectActivity} from '../../../../redux';
 
 const MainInfo = () => {
     const activity = useSelector(selectActivity);

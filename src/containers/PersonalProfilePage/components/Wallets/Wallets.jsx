@@ -19,7 +19,7 @@ import RemoveWalletForm from './components/RemoveWalletForm/RemoveWalletForm';
 
 import copyText from '../../../../helpers/copyText';
 
-import {selectWallets} from '../../../../slices/mainSlice';
+import {selectWallets} from '../../../../redux';
 
 const Wallets = () => {
     const wallets = useSelector(selectWallets);

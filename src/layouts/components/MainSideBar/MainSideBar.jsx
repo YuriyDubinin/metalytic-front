@@ -23,7 +23,7 @@ import Modal from '../../../components/Modal/Modal';
 import Notifications from '../../../components/Notifications/Notifications';
 import MainSideBarDescriptor from './components/MainSideBarDescriptor/MainSideBarDescriptor';
 
-import {selectMainSideBar, setMainSideBar, selectIsAuth} from '../../../slices/mainSlice';
+import {selectMainSideBar, setMainSideBar, selectIsAuth} from '../../../redux';
 
 const MainSideBar = () => {
     const [isModal, setModal] = useState(false);

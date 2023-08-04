@@ -12,7 +12,7 @@ import FailedIcon from './assets/failed-default.svg?jsx';
 
 import {validateSimpleRequired, validateForNumbersOnly} from '../../../../../../helpers/Validation';
 
-import {selectWallets} from '../../../../../../slices/mainSlice';
+import {selectWallets} from '../../../../../../redux';
 
 const ReplenishBlanceForm = ({onCloseModal, wallet}) => {
     const wallets = useSelector(selectWallets);

@@ -17,7 +17,7 @@ import InfoIcon from './assets/info-square.svg?jsx';
 import Modal from '../../../../components/Modal/Modal';
 import DetailedWinRate from './components/DetailedWinRate/DetailedWinRate';
 
-import {selectWinrates} from '../../../../slices/mainSlice';
+import {selectWinrates} from '../../../../redux';
 
 const WinRate = () => {
     const winRates = useSelector(selectWinrates);

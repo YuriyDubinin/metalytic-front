@@ -9,7 +9,7 @@ import CoinIcon from './assets/coin.svg?jsx';
 import Modal from '../../../../components/Modal/Modal';
 import ReplenishBlanceForm from './components/ReplenishBalanceForm/ReplenishBalanceForm';
 
-import {selectInternalCurrencyLogs} from '../../../../slices/mainSlice';
+import {selectInternalCurrencyLogs} from '../../../../redux';
 
 const InternalCurrency = () => {
     const internalCurrencLogs = useSelector(selectInternalCurrencyLogs);

@@ -13,7 +13,7 @@ import BrokenIcon from './assets/broken.svg?jsx';
 import InWorldIcon from './assets/in-world.svg?jsx';
 
 import {validateEmail, validatePassword} from '../../../../helpers/Validation';
-import {setIsAuth} from '../../../../slices/mainSlice';
+import {setIsAuth} from '../../../../redux';
 
 import {login} from './actions/signInFormApi';
 

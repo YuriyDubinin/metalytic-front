@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 
 import './style/DetailedInterests.scss';
 
-import {selectInterests} from '../../../../../../slices/mainSlice';
+import {selectInterests} from '../../../../../../redux';
 
 const DetailedInterests = () => {
     const interests = useSelector(selectInterests);

@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 import './style/LogoutForm.scss';
 
-import {setIsAuth} from '../../../../slices/mainSlice';
+import {setIsAuth} from '../../../../redux';
 
 import {clearStorages} from './actions/logoutFormApi';
 
