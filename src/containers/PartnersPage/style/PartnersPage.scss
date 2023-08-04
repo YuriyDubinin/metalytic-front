@@ -14,7 +14,7 @@
         position: absolute;
         top: 5%;
         left: 5%;
-        height: 30%;
+        height: 42.5%;
         width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease forwards;
@@ -24,7 +24,7 @@
         position: absolute;
         top: 5%;
         left: 36%;
-        height: 30%;
+        height: 42.5%;
         width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease 0.1s forwards;
@@ -34,7 +34,7 @@
         position: absolute;
         top: 5%;
         right: 5%;
-        height: 30%;
+        height: 42.5%;
         width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease 0.2s forwards;
@@ -44,8 +44,8 @@
         position: absolute;
         bottom: 5%;
         left: 5%;
-        height: 55%;
-        width: 40%;
+        height: 42.5%;
+        width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease 0.3s forwards;
     }
@@ -53,9 +53,9 @@
     :nth-child(5) {
         position: absolute;
         bottom: 5%;
-        left: 48%;
-        height: 55%;
-        width: 25%;
+        left: 36%;
+        height: 42.5%;
+        width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease 0.4s forwards;
     }
@@ -64,9 +64,13 @@
         position: absolute;
         bottom: 5%;
         right: 5%;
-        height: 55%;
-        width: 19%;
+        height: 42.5%;
+        width: 28%;
         border-radius: 25px;
         animation: neuro-light-appearance 0.3s ease 0.5s forwards;
     }
+}
+
+.partners-page__card {
+
 }

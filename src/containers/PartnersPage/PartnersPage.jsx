@@ -6,12 +6,9 @@ const PartnersPage = () => {
     return (
         <div className="partners-page">
             <ul className="partners-page__container">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li className="partners-page__card">
+
+                </li>
             </ul>
         </div>
     );
